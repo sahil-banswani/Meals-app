@@ -7,7 +7,7 @@ import '../models/meal.dart';
 class MealItem extends StatelessWidget {
   const MealItem({super.key, required this.meal, required this.onSelectMeal});
 
-  final Meal meal;   
+  final Meal meal;
 
   final void Function(Meal meal) onSelectMeal;
 
@@ -40,7 +40,7 @@ class MealItem extends StatelessWidget {
               placeholder: MemoryImage(kTransparentImage),
               image: NetworkImage(meal.imageUrl),
               fit: BoxFit.cover,
-              height: 200,
+              height: 250,
               width: double.infinity,
             ),
             Positioned(
@@ -49,7 +49,7 @@ class MealItem extends StatelessWidget {
               right: 0,
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 6, horizontal: 44),
+                    const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
                 color: Colors.black54,
                 child: Column(children: [
                   Text(
@@ -63,9 +63,10 @@ class MealItem extends StatelessWidget {
                         color: Colors.white),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 6,
                   ),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       MealItemTrait(
                         icon: Icons.schedule,
